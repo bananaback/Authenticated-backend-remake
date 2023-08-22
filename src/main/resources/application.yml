@@ -1,0 +1,25 @@
+server:
+  error:
+    include-binding-errors: always
+    include-message: always
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/banana_db
+    username: bananaback
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update # You can use "create", "create-drop", "update", or "validate"
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG # Set logging level for Hibernate SQL queries
+      springframework:
+        security: DEBUG
